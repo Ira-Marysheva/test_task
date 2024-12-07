@@ -41,13 +41,11 @@ type PointType = {
 abstract class Point {
   //інкапсуляція
     protected gridList: string[]; // Вхідний масив рядків
-    protected parsedGridList: string[][]; // Масив масивів символів
     protected start: PointType;
     protected end: PointType;
 
     constructor(gridList: string[], start: PointType, end: PointType) {
         this.gridList = gridList;
-        this.parsedGridList = gridList.map((row) => row.split(''));
         this.start = { ...start, path: [start] };
         this.end = { ...end, path: [] };
     }
